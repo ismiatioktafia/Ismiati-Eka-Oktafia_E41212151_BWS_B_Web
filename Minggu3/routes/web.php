@@ -25,4 +25,11 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
 
 // Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+Route::get('/session/create', 'SessionController@create');
+Route::get('/session/show', 'SessionController@show');
+Route::get('/session/delete', 'SessionController@delete');
 
+Route::get('/pegawai/{nama}', 'PegawaiController@index');
+
+Route::get('/formulir', 'PegawaiController@formulir');
+Route::post('/formulir/proses', 'PegawaiController@proses');
