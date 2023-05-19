@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::grup(['namespace' => 'Backend'], function (){
+    Route::get('api_pendidikan', 'ApiPendidikanController@getAll');
+    Route::get('api_pendidikan/{id}', 'ApiPendidikanController@getPen');
+    Route::get('api_pendidikan', 'ApiPendidikanContoller@createPen');
+    Route::get('api_pendidikan/{id}', 'ApiPendidikanController@updatePen');
+    Route::get('api_pendidikan/{id}', 'ApiPendidikanContoller@deletePen');
+});

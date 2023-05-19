@@ -19,3 +19,13 @@ use App\Http\Controllers\backend\DashboardController;
 //     Route::resource('dashboard' , 'DashboardController');
 // });
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/upload', 'UploadController@upload')->name('upload');
+Route::get('/uploud/proses', 'UploadController@proses_upload')->name('upload.proses');
+Route::post('/upload/resize', 'UploadController@resize_upload')
+->name('upload.resize');
+
+Route::get('/dropzone', 'UploadController@dropzone')
+->name('dropzone');
+Route::post('/dropzone/store', 'UploadController@dropzone_store')
+->name('dropzone.store');
