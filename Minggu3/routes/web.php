@@ -35,3 +35,13 @@ Route::get('/formulir', 'PegawaiController@formulir');
 Route::post('/formulir/proses', 'PegawaiController@proses');
 
 Route::get('/cobaerror/{nama?}','CobaController@index');
+
+Route::get('/upload', 'UploadController@upload')->name('upload');
+Route::get('/uploud/proses', 'UploadController@proses_upload')->name('upload.proses');
+Route::post('/upload/resize', 'UploadController@resize_upload')
+->name('upload.resize');
+
+Route::get('/dropzone', 'UploadController@dropzone')
+->name('dropzone');
+Route::post('/dropzone/store', 'UploadController@dropzone_store')
+->name('dropzone.store');
